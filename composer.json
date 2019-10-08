@@ -1,0 +1,27 @@
+{
+    "name": "pilarik31/exam2020-drivers-is",
+    "description": "Graduation exam 2020",
+    "type": "project",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "John Pilar",
+            "email": "pilarjan4111@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^3.6"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "inc/"
+        ]
+    },
+    "scripts": {
+        "phpcs": "phpcs inc/",
+        "phpcbf": "phpcbf inc/"
+    }
+}

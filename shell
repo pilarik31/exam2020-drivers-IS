@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+if (PHP_SAPI !== 'cli') {
+    die("PHP not running in CLI! This script must be ran from terminal!");
+} else {
+    echo "PHP running in terminal, proceeding..." . PHP_EOL;
+}
+require_once 'vendor/autoload.php';
+use PilaLib\Shell;
+$shell = new Shell();
+
+if ($argv[1] == "salt") {
+    $shell->salt();  
+}
