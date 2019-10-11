@@ -1,6 +1,9 @@
 <?php
 namespace PilaLib;
 
+use Exception;
+use PilaLib\Database;
+
 /**
  * Checking passwords, hashing
  */
@@ -61,5 +64,29 @@ class Auth
          * produce the same hash if the same password is passed.
          */
         return crypt($password, $hash)==$hash;
+    }
+
+    public function isRegistered(string $mail, string $password)
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $query = "SELECT * FROM users WHERE email='${mail}'";
+        if ($result = $db->query($query)) {
+            while ($row = $result->fetch_assoc()) {
+                $hashedPwd = $this->generateHash($row['password']);
+                return $this->validatePassowrd(
+                    $row['password'],
+                    $hashedPwd
+                );
+            }
+        }
+    }
+
+    public function isLogged($sessionInfo)
+    {
+        if (!$sessionInfo) {
+            return header("Location: login.php");
+        }
+        return true;
     }
 }
