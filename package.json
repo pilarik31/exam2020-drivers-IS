@@ -1,0 +1,36 @@
+{
+  "name": "exam2020-drivers-is",
+  "version": "1.0.0",
+  "description": "Gradutation exam 2020",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pilarik31/exam2020-drivers-IS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pilarik31/exam2020-drivers-IS/issues"
+  },
+  "homepage": "https://github.com/pilarik31/exam2020-drivers-IS#readme",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "fibers": "^4.0.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "sass": "^1.23.0"
+  }
+}
