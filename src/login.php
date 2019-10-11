@@ -14,7 +14,6 @@ if ($_SESSION['logged']) {
 }
 
 $submit = filter_input(INPUT_POST, 'submit');
-var_dump($submit);
 
 if (isset($submit)) {
     $formMail = filter_input(INPUT_POST, 'loginMail');
