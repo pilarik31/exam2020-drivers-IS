@@ -11,7 +11,13 @@ class Migration extends Database
         
     }
 
-    public function createUsersTable()
+    public function run()
+    {
+        echo "Migrating table \"users\"." . PHP_EOL;
+        $this->createUsersTable();
+    }
+
+    private function createUsersTable()
     {
         $sql = "CREATE TABLE users (
                 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

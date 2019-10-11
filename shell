@@ -7,8 +7,13 @@ if (PHP_SAPI !== 'cli') {
 }
 require_once 'vendor/autoload.php';
 use PilaLib\Shell;
+use PilaLib\Migration;
 $shell = new Shell();
+$migration = new Migration();
 
 if ($argv[1] == "salt") {
     $shell->salt();  
+}
+if ($argv[1] == "migrate") {
+    $migration->run();
 }
