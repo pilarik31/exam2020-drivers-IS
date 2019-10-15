@@ -1,12 +1,17 @@
 <?php
 require_once __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "vendor" . DIRECTORY_SEPARATOR . "autoload.php";
 use PilaLib\Auth;
+use PilaLib\Utilities;
 
+$utils = new Utilities();
 $auth = new Auth();
 
 session_start();
 if (!isset($_SESSION['logged'])) {
     $_SESSION['logged'] = false;
+}
+if (!isset($_SESSION['mail'])) {
+    $_SESSION['mail'] = "";
 }
 
 if ($_SESSION['logged']) {
@@ -20,6 +25,7 @@ if (isset($submit)) {
     $formPassword = filter_input(INPUT_POST, 'loginPassword');
     $status = $auth->isRegistered($formMail, $formPassword);
     if ($status) {
+        $_SESSION['mail'] = $formMail;
         $_SESSION['logged'] = true;
         header("Location: index.php");
     }

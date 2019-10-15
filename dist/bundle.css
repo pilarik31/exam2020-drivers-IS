@@ -7255,3 +7255,9 @@ h2 {
   #login-wrapper #icon {
     width: 60%; }
 
+.navbar .pila-nav-brand img {
+  height: 50px; }
+
+.navbar div ul li .pila-nav-face {
+  height: 50px; }
+

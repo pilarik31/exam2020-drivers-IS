@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="../dist/img/truck.png" alt="" height="50px">
+        <a class="navbar-brand pila-nav-brand" href="#">
+            <img src="../dist/img/truck.png" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,6 +19,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <img src="<?= $utils->getGravatar($_SESSION['mail']) ?>" class="rounded-circle pila-nav-face">
                 </li>
                 <li>
                     <a class="nav-link" href="logout.php">Odhlásit se</a>

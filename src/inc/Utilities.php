@@ -51,4 +51,13 @@ class Utilities
         }
         return implode('', $pieces);
     }
+
+    public function getGravatar(string $email, $default = 'mm', int $size = 92)
+    {
+        $email = md5(strtolower(trim($email)));
+        $default = urlencode($default);
+        $size = (int)$size;
+        $url = 'https://secure.gravatar.com/avatar/';
+        return $url.$email."?d=".$default."&s=".$size;
+    }
 }
